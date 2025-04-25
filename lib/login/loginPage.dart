@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/dashboard/homePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -98,8 +99,19 @@ class _LoginPageState extends State<LoginPage> {
                         MaterialPageRoute(builder: (context) => const HomePage()));
                       }
                     }, 
-                    child: const Text('Login'),
-                  )
+                    child: const Text('Masuk'),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text('Belum memiliki akun? Silahkan'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                         MaterialPageRoute(builder: (context) => const))
+                    }, 
+                    child: child)
                 ],
               ),
             ],
