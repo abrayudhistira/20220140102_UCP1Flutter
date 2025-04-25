@@ -14,13 +14,25 @@ class _LoginPageState extends State<LoginPage> {
   
   @override
   Widget build(BuildContext context) {
+    final _formkey = GlobalKey<FormState>();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Container(),
-    )Container()(
-      
+      body: Form(
+        key: _formkey,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(30.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 150,
+              ),
+              Text(
+                "Selamat Datang Kembali",
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+            ],
+          ),
+          ),
+        ),
     );
   }
 }
