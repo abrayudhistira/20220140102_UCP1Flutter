@@ -9,7 +9,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   
   @override
@@ -28,6 +28,21 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 "Selamat Datang Kembali",
                 style: Theme.of(context).textTheme.headlineLarge,
+              ),
+              TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  prefixIcon: new Icon(Icons.email),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Harap Masukkan Email';
+                  }
+                },
               ),
             ],
           ),
