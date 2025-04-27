@@ -13,8 +13,47 @@ class _HomePageState extends State<HomePage> {
     final _formkey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
         backgroundColor: Colors.deepOrange,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/man.png'),
+                  radius: 20,
+                ),
+                const SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Selamat Datang',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                    Text(
+                      'Admin',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            IconButton(
+              icon: const Icon(Icons.logout, color: Colors.white),
+              onPressed: () {
+                // Tambahkan logika logout di sini
+              },
+            ),
+          ],
+        ),
       ),
       body: Form(
         key: _formkey,
