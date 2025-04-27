@@ -23,9 +23,9 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Image.asset(
-                    'assets/images/gudang.png',
-                    height: 100,
-                    width: 90,
+                    'assets/images/gudang_paku.jpg',
+                    height: 300,
+                    width: 300,
                   ),
               Row(
                 children: [

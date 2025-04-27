@@ -64,6 +64,7 @@ flutter:
   assets:
     - assets/images/done-image.png
     - assets/images/eiger_logo.png
+    - assets/images/gudang_paku.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
