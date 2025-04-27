@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ucp1/login/loginPage.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({ Key? key, required this.email }) : super(key: key);
+  final String email;
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -27,8 +28,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Selamat Datang',
                       style: TextStyle(
                         color: Colors.white,
@@ -36,8 +37,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Text(
-                      'Admin',
-                      style: TextStyle(
+                      widget.email,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: const Icon(Icons.logout, color: Colors.white),
               onPressed: () {
-                Navigator.pop(
+                Navigator.pushReplacement(
                   context, 
                   MaterialPageRoute(builder: (context) => const LoginPage()),
                 );
