@@ -138,6 +138,11 @@ class _RegisterState extends State<Register> {
                                   },
                                 ),
                               ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "Password tidak boleh kosong";
+                                }
+                              },
                             ),
                           ],
                         ),
@@ -167,11 +172,19 @@ class _RegisterState extends State<Register> {
                                   },
                                 ),
                               ),
+                               validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "Password tidak boleh kosong";
+                                }
+                              },
                             ),
                           ],
                         ),
                       ),
                     ],
+                  ),
+                  const SizedBox(
+                    height: 30,
                   ),
                   Column(
                     children: [
