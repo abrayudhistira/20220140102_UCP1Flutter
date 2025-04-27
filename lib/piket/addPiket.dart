@@ -20,6 +20,8 @@ class _AddPiketState extends State<AddPiket> {
   void initState() {
     super.initState();
     _emailController = TextEditingController(text: widget.email);
+    _dateController = TextEditingController();
+    _taskController = TextEditingController();
   }
 
   @override

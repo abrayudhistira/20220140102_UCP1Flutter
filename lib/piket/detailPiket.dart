@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailPiket extends StatefulWidget {
-  
+class DetailPiket extends StatelessWidget {
+
   final String email;
   final String date;
   final String task;
 
   const DetailPiket({ Key? key, required this.email, required this.date, required this.task }) : super(key: key);
 
-  @override
-  _DetailPiketState createState() => _DetailPiketState();
-}
-
-class _DetailPiketState extends State<DetailPiket> {
   @override
   Widget build(BuildContext context) {
     final _formkey = GlobalKey<FormState>();
@@ -28,7 +23,15 @@ class _DetailPiketState extends State<DetailPiket> {
             child: Center(
               child: Column(
                 children: [
-
+                  Text(
+                    '$email',
+                  ),
+                  Text(
+                    '$date',
+                  ),
+                  Text(
+                    '$task',
+                  ),
                 ],
               ),
             ),
