@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/login/loginPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -49,7 +50,10 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: const Icon(Icons.logout, color: Colors.white),
               onPressed: () {
-                // Tambahkan logika logout di sini
+                Navigator.pop(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
               },
             ),
           ],
