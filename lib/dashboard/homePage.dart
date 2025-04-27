@@ -10,8 +10,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    final _formkey = GlobalKey<FormState>();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: Form(
+        key: _formkey,
+        child: SingleChildScrollView(
+
+        ),
+        )
     );
   }
 }
