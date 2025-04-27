@@ -80,8 +80,8 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         if (_formkey.currentState!.validate()) {
                           String email = _emailController.text;
-                          Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => AddPiket(email: email,)),
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => AddPiket(email: widget.email)),
                           );
                         }
                       },
