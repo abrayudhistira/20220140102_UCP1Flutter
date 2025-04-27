@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/piket/detailPiket.dart';
 
 class AddPiket extends StatefulWidget {
   final String email;
@@ -19,8 +20,6 @@ class _AddPiketState extends State<AddPiket> {
   void initState() {
     super.initState();
     _emailController = TextEditingController(text: widget.email);
-    _dateController = TextEditingController();
-    _taskController = TextEditingController();
   }
 
   @override
@@ -151,7 +150,7 @@ class _AddPiketState extends State<AddPiket> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => AddPiket(email: widget.email)
+                              MaterialPageRoute(builder: (context) => DetailPiket(email: widget.email, date: _dateController.text, task: _tasks[index] ),
                               ),
                             );
                           },
