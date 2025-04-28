@@ -10,19 +10,28 @@ class AddBarang extends StatefulWidget {
 class _AddBarangState extends State<AddBarang> {
 
   late TextEditingController _dateController;
+  late TextEditingController _jumlahBarangController;
+  late TextEditingController _hargaSatuanController;
 
   final List<String> jenisTransaksiList = <String>['Barang Masuk', 'Barang Keluar'];
   String? _selectedJenisTransaksi;
+
+  final List<String> jenisBarangList = <String>['Carrier', 'Sleeping Bag', 'Tenda', 'Sepatu'];
+  String? _selectedJenisBarang;
 
   @override
   void initState() {
     super.initState();
     _dateController = TextEditingController();
+    _jumlahBarangController = TextEditingController();
+    _hargaSatuanController = TextEditingController();
   }
 
   @override
   void dispose() {
     _dateController.dispose();
+    _jumlahBarangController.dispose();
+    _hargaSatuanController.dispose();
     super.dispose();
   }
 
@@ -101,7 +110,102 @@ class _AddBarangState extends State<AddBarang> {
                     }
                     return null;
                   },
-                )
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                DropdownButtonFormField(
+                  value: _selectedJenisBarang,
+                  decoration: InputDecoration(
+                    labelText: 'Pilih Jenis Barang',
+                    prefixIcon: const Icon(Icons.shopping_bag_rounded),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  items: jenisBarangList.map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue){
+                    setState(() {
+                      _selectedJenisBarang = newValue!;
+                      if (newValue == 'Carrier') {
+                        _hargaSatuanController.text = '250000';
+                      } else if (newValue == 'Sleeping Bag') {
+                        _hargaSatuanController.text = '150000';
+                      } else if (newValue == 'Tenda') {
+                        _hargaSatuanController.text = '500000';
+                      } else if (newValue == 'Sepatu') {
+                        _hargaSatuanController.text = '300000';
+                      }
+                    });
+                  },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Harap Pilih Jenis Transaksi';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: _jumlahBarangController,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelText: 'Jumlah Barang',
+                              prefixIcon: const Icon(Icons.list_alt_rounded),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Harap Masukkan Jumlah Barang';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: _hargaSatuanController,
+                            readOnly: true,
+                            decoration: InputDecoration(
+                              labelText: 'Harga Satuan',
+                              prefixIcon: const Icon(Icons.list_alt_rounded),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Harga Kosong';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
