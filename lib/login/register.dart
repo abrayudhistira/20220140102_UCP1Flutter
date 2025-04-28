@@ -142,6 +142,9 @@ class _RegisterState extends State<Register> {
                                 if (value == null || value.isEmpty) {
                                   return "Password tidak boleh kosong";
                                 }
+                                if (value != _confirmPasswordController.text) {
+                                  return "Password tidak sama";
+                                }
                               },
                             ),
                           ],
@@ -175,6 +178,9 @@ class _RegisterState extends State<Register> {
                                validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return "Password tidak boleh kosong";
+                                }
+                                if (value != _passwordController.text) {
+                                  return "Password tidak sama";
                                 }
                               },
                             ),
