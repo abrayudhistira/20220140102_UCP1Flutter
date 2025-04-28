@@ -127,7 +127,7 @@ const DetailPelanggan({ Key? key, required this.phone, required this.address, re
                       ),
                     onPressed: (){
                       if (_formkey.currentState!.validate()) {
-                        Navigator.popAndPushNamed(context, '/pelanggan');
+                        Navigator.pop(context, '/pelanggan');
                       }
                     }, 
                     child: const Text('Kembali'),
