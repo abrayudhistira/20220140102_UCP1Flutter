@@ -3,6 +3,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:ucp1/dashboard/homePage.dart';
 import 'package:ucp1/login/loginPage.dart';
 import 'package:ucp1/login/register.dart';
+import 'package:ucp1/pelanggan/addPelanggan.dart';
 import 'package:ucp1/piket/addPiket.dart';
 import 'package:ucp1/piket/detailPiket.dart';
 
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
             date: args['date'],
             task: args['task'],
           );
+        },
+        '/pelanggan' : (context) {
+          return const AddPelanggan();
         },
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const Register(),

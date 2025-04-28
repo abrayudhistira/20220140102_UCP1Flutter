@@ -114,8 +114,9 @@ class _HomePageState extends State<HomePage> {
                     child: InkWell(
                       onTap: () {
                         if (_formkey.currentState!.validate()) {
-                          Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => const AddPelanggan()),
+                          Navigator.pushNamed(
+                            context,
+                            '/pelanggan',
                           );
                         }
                       },
