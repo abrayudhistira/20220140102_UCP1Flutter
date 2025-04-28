@@ -12,7 +12,8 @@ class _AddPelangganState extends State<AddPelanggan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Title'),
+        title: const Text('Data Pelanggan'),
+        backgroundColor: Colors.deepOrange,
       ),
       body: Container(),
     );

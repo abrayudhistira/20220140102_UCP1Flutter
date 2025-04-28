@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1/login/loginPage.dart';
+import 'package:ucp1/pelanggan/addPelanggan.dart';
 import 'package:ucp1/piket/addPiket.dart';
 
 class HomePage extends StatefulWidget {
@@ -108,22 +109,31 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(width: 10),
                   Expanded(
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      color: Colors.deepOrange,
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Column(
-                          children: [
-                            Icon(Icons.group_add, color: Colors.white, size: 40),
-                            const SizedBox(height: 10),
-                            const Text(
-                              'Data Pelanggan',
-                              style: TextStyle(color: Colors.white, fontSize: 14),
-                            ),
-                          ],
+                    child: InkWell(
+                      onTap: () {
+                        if (_formkey.currentState!.validate()) {
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => const AddPelanggan()),
+                          );
+                        }
+                      },
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        color: Colors.deepOrange,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            children: [
+                              Icon(Icons.group_add, color: Colors.white, size: 40),
+                              const SizedBox(height: 10),
+                              const Text(
+                                'Data Pelanggan',
+                                style: TextStyle(color: Colors.white, fontSize: 14),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
