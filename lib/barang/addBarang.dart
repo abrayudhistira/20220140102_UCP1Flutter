@@ -44,6 +44,7 @@ class _AddBarangState extends State<AddBarang> {
         backgroundColor: Colors.deepOrange,
       ),
       body: Form(
+        key: _formkey,
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(30.0),
           child: Container(
@@ -220,6 +221,11 @@ class _AddBarangState extends State<AddBarang> {
                       ),
                   onPressed: (){
                     if (_formkey.currentState!.validate()) {
+                      print('Date: ${_dateController.text}');
+                      print('Jenis Transaksi: $_selectedJenisTransaksi');
+                      print('Jenis Barang: $_selectedJenisBarang');
+                      print('Jumlah Barang: ${_jumlahBarangController.text}');
+                      print('Harga Satuan: ${_hargaSatuanController.text}');
                       Navigator.pushNamed(
                         context, 
                       '/barang/detailBarang',

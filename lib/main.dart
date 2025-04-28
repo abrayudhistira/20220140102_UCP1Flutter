@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:ucp1/barang/addBarang.dart';
+import 'package:ucp1/barang/detailBarang.dart';
 import 'package:ucp1/dashboard/homePage.dart';
 import 'package:ucp1/login/loginPage.dart';
 import 'package:ucp1/login/register.dart';
@@ -59,6 +60,16 @@ class MyApp extends StatelessWidget {
         },
         '/barang' : (context) {
           return const AddBarang();
+        },
+        '/barang/detailBarang': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+          return DetailBarang(
+            date: args['date'],
+            jenisTransaksi: args['jenisTransaksi'],
+            jenisBarang: args['jenisBarang'],
+            jumlahBarang: args['jumlahBarang'],
+            hargaSatuan: args['hargaSatuan'],
+          );
         },
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const Register(),
