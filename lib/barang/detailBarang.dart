@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DetailBarang extends StatelessWidget { 
 
@@ -10,6 +11,14 @@ class DetailBarang extends StatelessWidget {
 
 const DetailBarang({ Key? key, required this.date, required this.jenisTransaksi, required this.jenisBarang, required this.jumlahBarang, required this.hargaSatuan }) : super(key: key);
 
+  String formatDate(String date) {
+    try {
+      DateTime parsedDate = DateFormat('d-M-yyyy').parse(date);
+      return DateFormat('EEEE, dd MMMM yyyy', 'id_ID').format(parsedDate);
+    } catch (e) {
+      return 'Format tanggal tidak valid';
+    }
+  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -39,9 +48,9 @@ const DetailBarang({ Key? key, required this.date, required this.jenisTransaksi,
                     children: [
                       Text('Tanggal'),
                       const SizedBox(
-                        width: 200,
+                        width: 160,
                       ),
-                      Text('$date')
+                      Text(formatDate(date))
                     ],
                   ),
                   const SizedBox(
