@@ -10,11 +10,24 @@ class AddBarang extends StatefulWidget {
 class _AddBarangState extends State<AddBarang> {
   @override
   Widget build(BuildContext context) {
+    final _formkey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Title'),
+        title: const Text('Pendataan Barang'),
+        backgroundColor: Colors.deepOrange,
       ),
-      body: Container(),
+      body: Form(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(30.0),
+          child: Container(
+            child: Column(
+              children: [
+                const Text('Tanggal Transaksi'),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
