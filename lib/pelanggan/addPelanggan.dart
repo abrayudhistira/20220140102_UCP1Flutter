@@ -194,10 +194,19 @@ class _AddPelangganState extends State<AddPelanggan> {
                       ),
                   onPressed: (){
                     if (_formkey.currentState!.validate()) {
-                          setState(() {
-                               
-                          });
-                        }
+                      Navigator.pushNamed(
+                        context,
+                        '/pelanggan/detailPelanggan',
+                        arguments: {
+                          'name': _nameController.text,
+                          'email': _emailController.text,
+                          'phone': _phoneController.text,
+                          'address': _addressController.text,
+                          'provinsi': _provinsiController.text,
+                          'kodepos': _kodeposController.text,
+                        },
+                      );
+                    }
                   }, 
                   child: const Text('Simpan'),
                 ),
