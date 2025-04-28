@@ -8,6 +8,7 @@ const DetailPelanggan({ Key? key, required emailCust, required phone, required a
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detail Pelanggan'),
+        backgroundColor: Colors.deepOrange,
       ),
       body: Container(),
     );

@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         '/pelanggan' : (context) {
           return const AddPelanggan();
         },
-        '/piket/detailPelanggan': (context) {
+        '/pelanggan/detailPelanggan': (context) {
           final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
           return DetailPelanggan(
             name: args['name'],
