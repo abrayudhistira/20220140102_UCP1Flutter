@@ -205,7 +205,7 @@ class _AddPelangganState extends State<AddPelanggan> {
                            borderRadius: BorderRadius.circular(20),
                         ),
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.black, 
+                        foregroundColor: Colors.deepOrange, 
                       ),
                   onPressed: (){}, 
                   child: const Text('Reset'),
