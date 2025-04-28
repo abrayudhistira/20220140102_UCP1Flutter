@@ -125,6 +125,23 @@ const DetailBarang({ Key? key, required this.date, required this.jenisTransaksi,
                       Text(calculateTotalHarga(jumlahBarang, hargaSatuan)),
                     ],
                   ),
+                  const SizedBox(
+                    height: 80,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: Size(300, 50),
+                        shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(20),
+                        ),
+                        backgroundColor: Colors.deepOrange,
+                        foregroundColor: Colors.white, 
+                      ),
+                    onPressed: (){
+                      Navigator.pop(context, '/pelanggan');
+                    }, 
+                    child: const Text('Kembali'),
+                  ),
                 ],
               ),
             ),
