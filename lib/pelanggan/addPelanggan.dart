@@ -192,7 +192,13 @@ class _AddPelangganState extends State<AddPelanggan> {
                         backgroundColor: Colors.deepOrange,
                         foregroundColor: Colors.white, 
                       ),
-                  onPressed: (){}, 
+                  onPressed: (){
+                    if (_formkey.currentState!.validate()) {
+                          setState(() {
+                               
+                          });
+                        }
+                  }, 
                   child: const Text('Simpan'),
                 ),
                 const SizedBox(
