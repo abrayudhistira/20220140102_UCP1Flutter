@@ -181,7 +181,7 @@ class _AddPelangganState extends State<AddPelanggan> {
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 200,
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -194,6 +194,21 @@ class _AddPelangganState extends State<AddPelanggan> {
                       ),
                   onPressed: (){}, 
                   child: const Text('Simpan'),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                        minimumSize: Size(300, 50),
+                        shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(20),
+                        ),
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black, 
+                      ),
+                  onPressed: (){}, 
+                  child: const Text('Reset'),
                 ),
               ],
             ),
