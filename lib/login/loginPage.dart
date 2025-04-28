@@ -123,9 +123,9 @@ class _LoginPageState extends State<LoginPage> {
                           const Text('Belum memiliki akun? Silahkan'),
                           TextButton(
                             onPressed: () {
-                              Navigator.push(
+                              Navigator.pushNamed(
                                 context,
-                                MaterialPageRoute(builder: (context) => const Register()));
+                                '/register');
                             }, 
                           child: const Text('Daftar Disini',style: TextStyle(color: Colors.deepOrange),))
                         ],

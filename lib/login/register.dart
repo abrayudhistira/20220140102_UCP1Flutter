@@ -214,9 +214,9 @@ class _RegisterState extends State<Register> {
                           const Text('Sudah memiliki akun? Silahkan'),
                           TextButton(
                             onPressed: () {
-                              Navigator.push(
+                              Navigator.pushNamed(
                                 context,
-                                MaterialPageRoute(builder: (context) => const LoginPage()));
+                                '/login');
                             }, 
                           child: const Text('Login Disini',style: TextStyle(color: Colors.deepOrange),))
                         ],
