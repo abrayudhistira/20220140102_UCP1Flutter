@@ -3,6 +3,8 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:ucp1/dashboard/homePage.dart';
 import 'package:ucp1/login/loginPage.dart';
 import 'package:ucp1/login/register.dart';
+import 'package:ucp1/piket/addPiket.dart';
+import 'package:ucp1/piket/detailPiket.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +27,18 @@ class MyApp extends StatelessWidget {
         '/' : (context) {
           final email = ModalRoute.of(context)?.settings.arguments as String;
           return HomePage(email: email);
+        },
+        '/piket' : (context) {
+          final email = ModalRoute.of(context)?.settings.arguments as String;
+          return AddPiket(email: email);
+        },
+        '/piket/detailPiket': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+          return DetailPiket(
+            email: args['email'],
+            date: args['date'],
+            task: args['task'],
+          );
         },
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const Register(),

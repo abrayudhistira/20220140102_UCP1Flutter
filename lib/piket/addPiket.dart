@@ -150,10 +150,14 @@ class _AddPiketState extends State<AddPiket> {
                           ),
                           trailing: const Icon(Icons.arrow_forward_ios_outlined, color: Colors.white),
                           onTap: () {
-                            Navigator.push(
+                            Navigator.pushNamed(
                               context,
-                              MaterialPageRoute(builder: (context) => DetailPiket(email: widget.email, date: _dateController.text, task: _tasks[index] ),
-                              ),
+                              '/piket/detailPiket',
+                              arguments: {
+                                'email' : _emailController.text,
+                                'date' : _dateController.text,
+                                'task' : _tasks[index],
+                              }
                             );
                           },
                         )

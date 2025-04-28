@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import 'package:ucp1/login/loginPage.dart';
 import 'package:ucp1/pelanggan/addPelanggan.dart';
-import 'package:ucp1/piket/addPiket.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key, required this.email }) : super(key: key);
@@ -81,8 +81,10 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         if (_formkey.currentState!.validate()) {
                           String email = _emailController.text;
-                          Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => AddPiket(email: widget.email)),
+                          Navigator.pushNamed(
+                            context,
+                            '/piket',
+                            arguments: widget.email,
                           );
                         }
                       },
