@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:ucp1/barang/addBarang.dart';
 import 'package:ucp1/dashboard/homePage.dart';
 import 'package:ucp1/login/loginPage.dart';
 import 'package:ucp1/login/register.dart';
@@ -55,6 +56,9 @@ class MyApp extends StatelessWidget {
             provinsi: args['provinsi'],
             kodepos: args['kodepos'],
           );
+        },
+        '/barang' : (context) {
+          return const AddBarang();
         },
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const Register(),

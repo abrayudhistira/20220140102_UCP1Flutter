@@ -144,22 +144,32 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 20),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                color: Colors.deepOrange,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Icon(Icons.inventory, color: Colors.white, size: 40),
-                      const SizedBox(height: 10),
-                      const Text(
-                        'Barang Masuk/Keluar',
-                        style: TextStyle(color: Colors.white, fontSize: 14),
-                      ),
-                    ],
+              InkWell(
+                onTap: () {
+                  if (_formkey.currentState!.validate()) {
+                    Navigator.pushNamed(
+                        context,
+                        '/barang',
+                      );
+                  }
+                },
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  color: Colors.deepOrange,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        Icon(Icons.inventory, color: Colors.white, size: 40),
+                        const SizedBox(height: 10),
+                        const Text(
+                          'Barang Masuk/Keluar',
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
