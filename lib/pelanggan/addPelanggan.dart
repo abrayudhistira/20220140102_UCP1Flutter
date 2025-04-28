@@ -222,7 +222,14 @@ class _AddPelangganState extends State<AddPelanggan> {
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.deepOrange, 
                       ),
-                  onPressed: (){}, 
+                  onPressed: (){
+                    _nameController.clear();
+                    _emailController.clear();
+                    _phoneController.clear();
+                    _addressController.clear();
+                    _provinsiController.clear();
+                    _kodeposController.clear();
+                  }, 
                   child: const Text('Reset'),
                 ),
               ],
