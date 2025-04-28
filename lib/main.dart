@@ -4,6 +4,7 @@ import 'package:ucp1/dashboard/homePage.dart';
 import 'package:ucp1/login/loginPage.dart';
 import 'package:ucp1/login/register.dart';
 import 'package:ucp1/pelanggan/addPelanggan.dart';
+import 'package:ucp1/pelanggan/detailPelanggan.dart';
 import 'package:ucp1/piket/addPiket.dart';
 import 'package:ucp1/piket/detailPiket.dart';
 
@@ -43,6 +44,17 @@ class MyApp extends StatelessWidget {
         },
         '/pelanggan' : (context) {
           return const AddPelanggan();
+        },
+        '/piket/detailPelanggan': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+          return DetailPelanggan(
+            name: args['name'],
+            emailCust: args['email'],
+            phone: args['phone'],
+            address: args['address'],
+            provinsi: args['provinsi'],
+            kodepos: args['kodepos'],
+          );
         },
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const Register(),
