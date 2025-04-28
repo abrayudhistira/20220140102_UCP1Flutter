@@ -206,6 +206,35 @@ class _AddBarangState extends State<AddBarang> {
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 80,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                        minimumSize: Size(300, 50),
+                        shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(20),
+                        ),
+                        backgroundColor: Colors.deepOrange,
+                        foregroundColor: Colors.white, 
+                      ),
+                  onPressed: (){
+                    if (_formkey.currentState!.validate()) {
+                      Navigator.pushNamed(
+                        context, 
+                      '/barang/detailBarang',
+                      arguments: {
+                        'date': _dateController.text,
+                        'jenisTransaksi': _selectedJenisTransaksi,
+                        'jenisBarang': _selectedJenisBarang,
+                        'jumlahBarang': _jumlahBarangController.text,
+                        'hargaSatuan': _hargaSatuanController.text,
+                      },
+                    );
+                    }
+                  }, 
+                  child: const Text('Submit'),
+                ),
               ],
             ),
           ),
