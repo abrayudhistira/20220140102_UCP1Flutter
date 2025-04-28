@@ -19,6 +19,18 @@ const DetailBarang({ Key? key, required this.date, required this.jenisTransaksi,
       return 'Format tanggal tidak valid';
     }
   }
+
+  String calculateTotalHarga(String jumlahBarang, String hargaSatuan) {
+    try {
+      int jumlah = int.parse(jumlahBarang);
+      int harga = int.parse(hargaSatuan);
+      int total = jumlah * harga;
+      return total.toString();
+    } catch (e) {
+      return 'Perhitungan tidak valid';
+    }
+  }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -99,6 +111,18 @@ const DetailBarang({ Key? key, required this.date, required this.jenisTransaksi,
                         width: 150,
                       ),
                       Text('$hargaSatuan')
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Text('Total Harga'),
+                      const SizedBox(
+                        width: 200,
+                      ),
+                      Text(calculateTotalHarga(jumlahBarang, hargaSatuan)),
                     ],
                   ),
                 ],
