@@ -45,6 +45,7 @@ const DetailPelanggan({ Key? key, required this.phone, required this.address, re
                   ),
                   TextFormField(
                     controller: _addressController,
+                    readOnly: true,
                     decoration: InputDecoration(
                       labelText: 'Alamat',
                       prefixIcon: const Icon(Icons.home),
@@ -69,6 +70,7 @@ const DetailPelanggan({ Key? key, required this.phone, required this.address, re
                           children: [
                             TextFormField(
                               controller: _provinsiController,
+                              readOnly: true,
                               decoration: InputDecoration(
                                 labelText: 'Provinsi',
                                 prefixIcon: const Icon(Icons.flag_circle_rounded),
@@ -94,6 +96,7 @@ const DetailPelanggan({ Key? key, required this.phone, required this.address, re
                           children: [
                             TextFormField(
                               controller: _kodeposController,
+                              readOnly: true,
                               decoration: InputDecoration(
                                 labelText: 'Kode Pos',
                                 prefixIcon: const Icon(Icons.newspaper_rounded),

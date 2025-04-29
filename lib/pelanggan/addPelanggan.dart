@@ -85,6 +85,7 @@ class _AddPelangganState extends State<AddPelanggan> {
                           const Text('No HP'),
                           TextFormField(
                             controller: _phoneController,
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               labelText: 'No HP',
                               prefixIcon: const Icon(Icons.list_alt_rounded),
@@ -161,6 +162,7 @@ class _AddPelangganState extends State<AddPelanggan> {
                           const Text('Kode Pos'),
                           TextFormField(
                             controller: _kodeposController,
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               labelText: 'Kode Pos',
                               prefixIcon: const Icon(Icons.newspaper_rounded),
